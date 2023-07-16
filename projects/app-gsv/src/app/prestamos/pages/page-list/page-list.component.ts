@@ -27,7 +27,7 @@ export class PageListComponent {
   fila!: any;
 
   metaDataColumns: MetaDataColumn[] = [
-    { field: 'id_prestamo', title: 'ID' },
+    { field: 'id_prestamo', title: 'ID PRESTAMO' },
     { field: 'id_equipo_per', title: 'ID EQUIPO' },
     { field: 'fecha_prestamo', title: 'FECHA DEL PRESTAMO' },
     { field: 'fecha_devolucion', title: 'FECHA DE DEVOLUCION' },

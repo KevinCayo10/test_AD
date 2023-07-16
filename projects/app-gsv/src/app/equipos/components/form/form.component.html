@@ -1,0 +1,68 @@
+<div class="container col-md-10">
+  <div class="card custom-card">
+    <div class="card-body">
+      <form [formGroup]="formulario" (ngSubmit)="grabar()" class="form-container">
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+              <label for="nombre_equipo" class="form-label">Nombre del Equipo</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="nombre_equipo" formControlName="nombre_equipo">
+                <span class="input-group-text">
+                  <i class="fas fa-desktop"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="marca" class="form-label">Marca</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="marca" formControlName="marca">
+                <span class="input-group-text">
+                  <i class="fas fa-tag"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+              <label for="caracteristicas" class="form-label">Característica</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="caracteristicas" formControlName="caracteristicas">
+                <span class="input-group-text">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="estado" class="form-label">Estado</label>
+              <div class="input-group">
+                <select class="form-control" id="estado" formControlName="estado">
+                  <option value="NO DISPONIBLE">No Disponible</option>
+                  <option value="DISPONIBLE">Disponible</option>
+                </select>
+                <span class="input-group-text">
+                  <i class="fas fa-check"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary me-2" [disabled]="formulario.invalid">
+            <i class="fasfa-save"></i> Grabar
+          </button>
+          <button type="button" class="btn btn-secondary" (click)="cerrarFormulario()">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let metadata of metaDataColumns">{{ metadata.title }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let metadata of metaDataColumns">{{ row[metadata.field] }}</td>
+
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-success" [disabled]="!(row.estado === 'PENDIENTE') " (click)="accionAprobar(row)">
+              <i class="fa-solid fa-file-circle-check"></i>
+              <span class="btn-tooltip">Aprobar</span>
+
+            </button>
+            <button class="btn btn-secondary" [disabled]="!(row.estado === 'PENDIENTE')" (click)="accionRechazar(row)">
+              <i class="fa-solid fa-file-circle-xmark"></i>
+              <span class="btn-tooltip">Rechazar</span>
+
+            </button>
+            <button class="btn btn-warning" [disabled]="!(row.estado==='DEVUELTO')" (click)="accionEditar(row)">
+              <span class="btn-tooltip">Devolver</span>
+              <i class="fa fa-pencil"></i>
+            </button>
+            <button class="btn btn-danger" (click)="accionEliminar(row.id_prestamo)">
+              <i class="fa fa-trash"></i>
+              <span class="btn-tooltip">Eliminar</span>
+            </button>
+          </div>
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

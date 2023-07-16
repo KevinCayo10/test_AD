@@ -1,0 +1,90 @@
+<div class="container col-md-10">
+  <div class="card custom-card">
+    <div class="card-body">
+      <form [formGroup]="formulario" (ngSubmit)="grabar()" class="form-container">
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+              <label for="cedula" class="form-label">Cédula</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="cedula" formControlName="cedula">
+                <span class="input-group-text">
+                  <i class="fas fa-id-card"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="apellido" formControlName="apellido">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="correo" formControlName="correo">
+                <span class="input-group-text">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="contrasena" class="form-label">Contraseña</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="contrasena" formControlName="contrasena">
+                <span class="input-group-text">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="rol" class="form-label">Rol</label>
+              <div class="input-group">
+                <select class="form-control" id="rol" formControlName="rol">
+                  <option value="ESTUDIANTE">ESTUDIANTE</option>
+                  <option value="DOCENTE">DOCENTE</option>
+                </select>
+                <span class="input-group-text">
+                  <i class="fas fa-user-tag"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary me-2" [disabled]="formulario.invalid">
+            <i class="fas fa-save"></i> Grabar
+          </button>
+          <button type="button" class="btn btn-secondary" (click)="cerrarFormulario()">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
